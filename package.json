@@ -1,0 +1,25 @@
+{
+  "name": "demoqa-playwright-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:textbox":"playwright test tests/TextboxTests.spec.js --headed",
+    "tests:ui": "playwright test --grep @ui",
+    "tests:all": "playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avlasova05/demoqa-playwright-tests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avlasova05/demoqa-playwright-tests/issues"
+  },
+  "homepage": "https://github.com/avlasova05/demoqa-playwright-tests#readme",
+  "dependencies": {
+    "@playwright/test": "^1.56.1"
+  }
+}
