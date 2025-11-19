@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:textbox":"playwright test tests/TextboxTests.spec.js --headed",
+    "test:textbox": "playwright test tests/TextboxTests.spec.js --headed",
     "tests:ui": "playwright test --grep @ui",
-    "tests:all": "playwright test"
+    "tests:all": "playwright test",
+    "tests:neg": "playwright test --grep @neg --headed"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/avlasova05/demoqa-playwright-tests#readme",
   "dependencies": {
-    "@playwright/test": "^1.56.1"
+    "@playwright/test": "^1.56.1",
+    "testrail-api": "^1.3.6"
   }
 }
