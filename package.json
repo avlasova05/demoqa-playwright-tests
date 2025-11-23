@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test:textbox": "playwright test tests/TextboxTests.spec.js --headed",
-    "tests:ui": "playwright test --grep @ui",
-    "tests:all": "playwright test",
-    "tests:neg": "playwright test --grep @neg --headed"
+    "tests:ui": "playwright test --grep @ui --headed",
+    "tests:all": "playwright test --headed",
+    "tests:neg": "playwright test --grep @neg --headed",
+    "tests:pos": "playwright test --grep @pos --headed"
   },
   "repository": {
     "type": "git",
