@@ -122,3 +122,14 @@ test('Fullfilling the form with long text input @ui', async ({page}) => {
     await textboxPage.CheckCurrAddressInsideOutput(longAddress);
 });
 
+test ('Correctness of "Permanent Address" name of field in output box @ui', async({page}) => {
+    const textboxPage = new TextboxPage(page);
+    await textboxPage.open();
+    await textboxPage.FillUserInfo({
+        permanentAddress:"New York"
+    });
+    textboxPage.ClickSubmit();
+    await textboxPage.CheckCorrectnessOfPermAddress();
+
+})
+

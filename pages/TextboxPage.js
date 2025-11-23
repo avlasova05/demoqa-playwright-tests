@@ -70,12 +70,27 @@ export class TextboxPage extends BasePage{
         if (!isInside || textOverAddress) {
             await this.page.screenshot ({
                 path: 'screenshots/bug-CurrentAddressBorders.png',
-                fullPage: true
+                fullPage: false
             });
 
             throw new Error ('Current Address is not inside outbox');
         }
         console.log (`Text ${expectedAddress} is inside output`);
         return true;
+    };
+
+    async CheckCorrectnessOfPermAddress () {
+        const PermAddresOutput = this.page.locator('#permanentAddress.mb-1');
+        await expect(PermAddresOutput).toBeVisible();
+        const actualText = await PermAddresOutput.textContent(); 
+        if (actualText && actualText.includes('Permanent Address :')) {
+            return true;
+        } else {
+            await this.page.screenshot ({
+                path: 'screenshots/bug-CorrectnessOfPermAddress-bug.png',
+                fullPage: false
+            });
+            throw new Error('Permanent Address is written incorrectly');
+        };
     };
 }; 
