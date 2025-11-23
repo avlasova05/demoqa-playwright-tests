@@ -72,7 +72,6 @@ export class TextboxPage extends BasePage{
                 path: 'screenshots/bug-CurrentAddressBorders.png',
                 fullPage: false
             });
-
             throw new Error ('Current Address is not inside outbox');
         }
         console.log (`Text ${expectedAddress} is inside output`);
