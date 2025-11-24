@@ -13,3 +13,7 @@ do **cd demoqa-playwright-tests** and do **npm install**
 **npm run tests:ui** - to run all the ui tests
 
 **npm run tests:all** - to run all tests
+
+**npm run tests:neg** - to run negative tests
+
+**npm run tests:pos** - to run positive tests
