@@ -130,6 +130,5 @@ test ('Correctness of "Permanent Address" name of field in output box @ui', asyn
     });
     textboxPage.ClickSubmit();
     await textboxPage.CheckCorrectnessOfPermAddress();
-
-})
+});
 
