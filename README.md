@@ -8,7 +8,7 @@ do **cd demoqa-playwright-tests** and do **npm install**
 
 ## To run tests
 
-**npm run test:testbox** - to run Textbox Test only 
+**npm run test:testbox** - to run Textbox Tests only 
 
 **npm run tests:ui** - to run all the ui tests
 
@@ -17,3 +17,5 @@ do **cd demoqa-playwright-tests** and do **npm install**
 **npm run tests:neg** - to run negative tests
 
 **npm run tests:pos** - to run positive tests
+
+**npm run tests:checkbox** - to run Checkbox Tests only
