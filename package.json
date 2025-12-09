@@ -8,7 +8,10 @@
     "tests:ui": "playwright test --grep @ui --headed",
     "tests:all": "playwright test --headed",
     "tests:neg": "playwright test --grep @neg --headed",
-    "tests:pos": "playwright test --grep @pos --headed"
+    "tests:pos": "playwright test --grep @pos --headed",
+    "tests:checkbox": "playwright test tests/CheckboxTests.spec.js --headed",
+    "tests:radiobutton": "playwright test tests/RadioButtonTests.spec.js --headed",
+    "tests:webtables": "playwright test tests/WebTableTests.spec.js --headed"
   },
   "repository": {
     "type": "git",
