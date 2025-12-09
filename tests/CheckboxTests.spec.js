@@ -1,19 +1,20 @@
-import { test, expect } from "@playwright/test";
 import { BasePage } from "../pages/BasePage";
 import { CheckboxPage } from "../pages/CheckboxPage";
+import {test, expect} from './baseTest';
 
-test ('tick the "Home" checkbox', async ({page}) => {
-    const checkboxPage = new CheckboxPage(page);
-    await checkboxPage.open();
-    await checkboxPage.ClickHomeCheckbox();
+test.describe('Checkbox Tests', () => {
+    test.beforeEach(async ({pm}) => {
+        await pm.checkboxPage.open();
+    });
+
+test ('tick the "Home" checkbox', async ({pm, page}) => {
+    await pm.checkboxPage.ClickHomeCheckbox();
     await expect (page.locator('#result')).toContainText('You have selected :home');
     //await expect(page.getByText('You have selected : home desktop notes commands documents workspace react angular veu office public private classified general downloads wordFile excelFile')).toBeVisible();
 });
 
-test ('opening the tree', async ({page}) => {
-    const checkboxPage = new CheckboxPage(page);
-    await checkboxPage.open();
-    await checkboxPage.ClickToggleButton();
+test ('opening the tree', async ({pm, page}) => {
+    await pm.checkboxPage.ClickToggleButton();
 
     const titles = page.locator('.rct-title');
     const texts = await titles.allTextContents();
@@ -27,13 +28,11 @@ test ('opening the tree', async ({page}) => {
     };
 });
 
-test ("Opening the 'Desktop', 'Documents' and 'Downloads' fields", async({page}) => {
-    const checkboxPage = new CheckboxPage(page);
-    await checkboxPage.open();
-    await checkboxPage.ClickToggleButton();
+test ("Opening the 'Desktop', 'Documents' and 'Downloads' fields", async({pm, page}) => {
+    await pm.checkboxPage.ClickToggleButton();
     await page.waitForTimeout(2000);
-    await checkboxPage.ClickAllSubToggleButtons();
-    await page.screenshot({path:'screenshots/after_clicking.png', fullPage: true});
+    await pm.checkboxPage.ClickAllSubToggleButtons();
+    //await page.screenshot({path:'screenshots/after_clicking.png', fullPage: true});
     //const TitlesToggle = await page.locator('.rct-title');
     //const TextsToggle = await TitlesToggle.allTextContents();
     //expect(TextsToggle).toHaveLength(10);
@@ -46,21 +45,15 @@ test ("Opening the 'Desktop', 'Documents' and 'Downloads' fields", async({page})
     //}
 });
 
-test ('Clicking the "Expand All" and "Collapse All"', async ({page}) => {
-    const checkboxPage = new CheckboxPage(page);
-    await checkboxPage.open();
-    await checkboxPage.ClickExpandAll();
+test ('Clicking the "Expand All" and "Collapse All"', async ({pm, page}) => {
+    await pm.checkboxPage.ClickExpandAll();
     await expect(page.getByText('WorkSpace')).toBeVisible();
-    await page.screenshot({path:'screenshots/expand_all.png', fullPage: true});
-    await checkboxPage.ClickCollapseAll();
+    await pm.checkboxPage.ClickCollapseAll();
     await expect(page.getByText('WorkSpace')).not.toBeVisible();
-    await page.screenshot({path:'screenshots/collapse_all.png', fullPage: true});
 });
 
-test ('Ticking the checkbox near to "Home"', async ({page}) => {
-    const checkboxPage = new CheckboxPage(page);
-    await checkboxPage.open();
-    await checkboxPage.TickTheCheckbox();
-    await checkboxPage.CheckTickedCheckbox();
-    await page.screenshot({path:'screenshots/ticking_checkbox.png', fullPage: true});
+test ('Ticking the checkbox near to "Home"', async ({pm, page}) => {
+    await pm.checkboxPage.ClickHomeCheckbox();
+    await pm.checkboxPage.CheckTickedCheckbox();
+});
 });

@@ -9,7 +9,7 @@ export class CheckboxPage extends BasePage{
         this.ExpandAllButton = page.locator('.rct-icon.rct-icon-expand-all');
         this.CollapseAllButton = page.locator('.rct-icon.rct-icon-collapse-all');
         this.ToggleButton = page.locator('.rct-icon.rct-icon-expand-close');
-        this.subToggleButton = page.locator('path[d = "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"]');
+        this.subToggleButton = page.locator('.rct-icon.rct-icon-expand-close');
         //this.subToggleButton = page.locator('rct-icon.rct-icon-expand-close');
     };
     async open() {
@@ -40,10 +40,6 @@ export class CheckboxPage extends BasePage{
 
     async ClickCollapseAll () {
         await this.CollapseAllButton.click();
-    };
-  
-    async TickTheCheckbox() {
-        await this.TickButton.click(); 
     };
 
     async CheckTickedCheckbox () {
