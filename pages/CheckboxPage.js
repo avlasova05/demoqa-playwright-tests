@@ -10,7 +10,6 @@ export class CheckboxPage extends BasePage{
         this.CollapseAllButton = page.locator('.rct-icon.rct-icon-collapse-all');
         this.ToggleButton = page.locator('.rct-icon.rct-icon-expand-close');
         this.subToggleButton = page.locator('.rct-icon.rct-icon-expand-close');
-        //this.subToggleButton = page.locator('rct-icon.rct-icon-expand-close');
     };
     async open() {
         await this.NavigateTo('/checkbox');
@@ -48,6 +47,7 @@ export class CheckboxPage extends BasePage{
     };
 };
 
+//TODO: check later
       //async ClickAllSubToggleButtons() {
        // const SubToggleButtons = await this.subToggleButton.all();
         //for (const SubToggle of SubToggleButtons) {
