@@ -14,8 +14,6 @@ do **cd demoqa-playwright-tests** and do **npm install**
 
 **npm run tests:all** - to run all tests
 
-**npm run tests:neg** - to run negative tests
-
 **npm run tests:pos** - to run positive tests
 
 **npm run tests:checkbox** - to run Checkbox Tests only
