@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test:textbox": "playwright test tests/TextboxTests.spec.js --headed",
-    "tests:ui": "playwright test --grep @ui --headed",
     "tests:all": "playwright test --headed",
-    "tests:neg": "playwright test --grep @neg --headed",
-    "tests:pos": "playwright test --grep @pos --headed",
     "tests:checkbox": "playwright test tests/CheckboxTests.spec.js --headed",
     "tests:radiobutton": "playwright test tests/RadioButtonTests.spec.js --headed",
-    "tests:webtables": "playwright test tests/WebTableTests.spec.js --headed"
+    "tests:webtables": "playwright test tests/WebTableTests.spec.js --headed",
+    "tests:all:ci": "playwright test",
+    "tests:buttons": "playwright test tests/ButtonsTests.spec.ts --headed",
+    "tests:links": "playwright test tests/LinksTests.spec.js --headed",
+    "tests:brokenlinks": "playwright test tests/BrokenLinksTests.spec.js --headed",
+    "tests:uploads": "playwright test tests/UploadDownloadTests.spec.js --headed"
   },
   "repository": {
     "type": "git",
@@ -27,5 +29,8 @@
   "dependencies": {
     "@playwright/test": "^1.56.1",
     "testrail-api": "^1.3.6"
+  },
+  "devDependencies": {
+    "allure-playwright": "^3.4.3"
   }
 }
