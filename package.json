@@ -1,8 +1,23 @@
 {
   "name": "demoqa-playwright-tests",
   "version": "1.0.0",
-  "description": "",
+  "description": "after doing git clone https://github.com/avlasova05/demoqa-playwright-tests.git",
+  "keywords": [],
+  "homepage": "https://github.com/avlasova05/demoqa-playwright-tests#readme",
+  "bugs": {
+    "url": "https://github.com/avlasova05/demoqa-playwright-tests/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avlasova05/demoqa-playwright-tests.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
   "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
     "test:textbox": "playwright test tests/TextboxTests.spec.js --headed",
     "tests:ui": "playwright test --grep @ui --headed",
@@ -13,19 +28,10 @@
     "tests:radiobutton": "playwright test tests/RadioButtonTests.spec.js --headed",
     "tests:webtables": "playwright test tests/WebTableTests.spec.js --headed"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/avlasova05/demoqa-playwright-tests.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/avlasova05/demoqa-playwright-tests/issues"
-  },
-  "homepage": "https://github.com/avlasova05/demoqa-playwright-tests#readme",
   "dependencies": {
-    "@playwright/test": "^1.56.1",
     "testrail-api": "^1.3.6"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
   }
 }
